@@ -42,4 +42,35 @@ public class Monster {
       return deaths;
    }
    
+   public void setName(String n) // Set Name Of Monster
+   {
+      name = n;
+   }
+   
+   public void setExperience(double e) // Set Experience Of Monster
+   {
+      experience = e;
+   }
+   
+   public void setHealth(double h) // Set Health of Monster
+   {
+      health = h;
+   }
+   
+   public void setDefense(double d) // Set Defense of Monster
+   {
+      defense = d;
+   }
+   
+   public void setLevel(int l) // Set Level of Monster
+   {
+      level = l;
+   }
+   
+   public void setDeaths(int d) // Set Amount of Death Monsters has.
+   {
+      deaths = d;
+   }
+   
+   
 }
