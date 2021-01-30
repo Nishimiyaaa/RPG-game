@@ -1,8 +1,14 @@
 import java.util.Scanner;
 
 public class FunnyRPG {
-   public static void main(String []args) {  
+   public static void main(String []args) 
+   hello
    
+   
+
+   }
+}
+
       Scanner input = new Scanner(System.in); 
       Monster goblin = new Monster("Goblin");
 
@@ -25,3 +31,4 @@ public class FunnyRPG {
 //if (Defeated%2 == 0) {
 //prints everything 
 //}
+
