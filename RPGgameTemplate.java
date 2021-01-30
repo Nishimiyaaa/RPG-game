@@ -1,4 +1,4 @@
-import java.util.Scanner;
+   import java.util.Scanner;
 
 public class RPGgameTemplate {
    public static void main(String []args) {
@@ -8,12 +8,13 @@ public class RPGgameTemplate {
       int PLevel = 1, PAttack = 5, PDefense = 2, PHealth = 100;   //PLevel = Player's level, PAttack = Player's attack, PDefense = Player's Defense, PHealth = Player's Health
       double Rxp = 100, Pxp = 0, Mxp = 25, RawPDMG; 
       int Defeated = 0, MLevel = 1, MAttack = 5, MDefense = 2, MHealth = 25;
+      String 
    
-      System.out.println("Would you like to attack? Sorry there isn't a no"); //finds if the user wants to attack, no option for now but there will be an option later on
+      System.out.println("Would you like to attack? Yes or No?"); //finds if the user wants to attack, no option for now but there will be an option later on
       String UserAttack = input.nextLine();
       
       
-     while (
+     if (Spawned > Defeated) 
       
       while (PHealth > 0) {       //This tells you if the player's health goes > 0 or not 
          if (Rxp >= Pxp) {         //If required xp passes or equals to Player's xp, the player will level up in one of the if statements
@@ -23,10 +24,24 @@ public class RPGgameTemplate {
                 Rxp = Rxp*1.5;
                 PAttack = PAttack + 2;
                 PDefense = PDefense + 2;
-           If (Player has killed the monster)
+           If (Player has killed the monster)//(MHealth <= 0)
            Defeated++;
          } If (Defeated == MLevel) 
-         M
+        
+        
+        
+        
+        
+         {(Main Section)
+         player attack 
+         if (MHealth <= 0 || MHealth >= 1) 
+            while (MHealth <= 0) 
+            Monster's stats increase;
+            player gets xp;
+            while (MHealth >= 1) 
+            Monster attcks Player; (Player's health go down) 
+            See if player dies; (if die "Game Over")
+            If no die System.out.println("Would you like to attack? Yes or No?");     
       }
       //Steps on what to do
       //1. User attacks Monster (RawPDMG = Player's Attack - Monster's Defense) (MHealth = MHealth - RawPDMG) 
