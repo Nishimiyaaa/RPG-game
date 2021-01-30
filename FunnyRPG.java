@@ -3,13 +3,12 @@ import java.util.Scanner;
 public class FunnyRPG {
    public static void main(String []args) {  
    
-<<<<<<< Updated upstream
       Scanner input = new Scanner(System.in); 
-=======
-      Scanner input = new Scanner(System.in);  
->>>>>>> Stashed changes
+      Monster goblin = new Monster("Goblin");
+
       
       while (true) {
+         System.out.print(goblin.getName() + " roars! ");
          System.out.println("Would you like to Attack? Yes or No?");
          String user = input.next();
          
