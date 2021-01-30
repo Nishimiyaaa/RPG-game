@@ -4,7 +4,6 @@ public class FunnyRPG {
    public static void main(String []args) {  
    
       Scanner input = new Scanner(System.in); 
-      toLowerCase 
       
       while (true) {
          System.out.println("Would you like to Attack? Yes or No?");
