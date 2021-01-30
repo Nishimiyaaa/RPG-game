@@ -89,5 +89,34 @@ public class Monster {
       deaths = d;
    }
    
+   public void increaseExperience(double a)
+   {
+      setExperience( getExperience() + a );
+   }
+   
+   public void increaseHealth(double h)
+   {
+      setHealth( getHealth() + h);
+   }
+   
+   public void increaseDefense(double d)
+   {
+      setDefense( getDefense() + d );
+   }
+   
+   public void increaseLevel(int l)
+   {
+      setLevel( getLevel() + l);
+   }
+   
+   public void increaseDeaths(int d)
+   {
+      setDeaths( getDeaths() + d );
+   }
+   
+   public void takeDamage(double damage)
+   {
+      setHealth( getHealth() - damage );   
+   }
    
 }

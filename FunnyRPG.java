@@ -4,6 +4,9 @@ public class FunnyRPG {
    public static void main(String []args) {  
    
       Scanner input = new Scanner(System.in); 
+      Monster goblin = new Monster("XQC");
+      
+      System.out.println(goblin.getExperience()); 
       
       while (true) {
          System.out.println("Would you like to Attack? Yes or No?");
@@ -15,6 +18,7 @@ public class FunnyRPG {
          else 
             System.out.println("COMING OUT!");         
       }
+      
    }
 }
 
