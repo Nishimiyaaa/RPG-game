@@ -7,9 +7,26 @@ public class Monster {
    private int level;
    private int deaths;
    
-   public Monster()
-   {
+   // DEFAULTS: XP - 25, HP - 25, DF - 2, LVL - 1, DTH - 0 
    
+   public Monster(String n, double xp, double hp, double df, int lvl, int death) // Monster Constructor, takes all private instance variables
+   {
+      setName(n);
+      setExperience(xp);
+      setHealth(hp);
+      setDefense(df);
+      setLevel(lvl);
+      setDeaths(0);
+   }
+   
+   public Monster(String n) // Monster Constructor, sets name, assigns default values to XP, HP, DF, LVL and DTHs (25,25,2,1,0) respectively
+   {
+      setName(n);
+      setExperience(25);
+      setHealth(25);
+      setDefense(2);
+      setLevel(1);
+      setDeaths(0);
    }
    
    public String getName() // Get Monster Name
