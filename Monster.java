@@ -89,34 +89,46 @@ public class Monster {
       deaths = d;
    }
    
-   public void increaseExperience(double a)
+   public void increaseExperience(double a) // Increase Monster's XP By a Amount
    {
       setExperience( getExperience() + a );
    }
    
-   public void increaseHealth(double h)
+   public void increaseHealth(double h) // Increase Monster's Health By h Amount
    {
       setHealth( getHealth() + h);
    }
    
-   public void increaseDefense(double d)
+   public void increaseDefense(double d) // Increase Monster's Defense By d Amount
    {
       setDefense( getDefense() + d );
    }
    
-   public void increaseLevel(int l)
+   public void increaseLevel(int l) // Increase Monster's Level By l Amount
    {
       setLevel( getLevel() + l);
    }
    
-   public void increaseDeaths(int d)
+   public void increaseDeaths(int d) // Increases Monster's Death By d Amount
    {
       setDeaths( getDeaths() + d );
    }
    
-   public void takeDamage(double damage)
+   public void takeRawDamage(double dmg) // Monster Takes Raw Damage (not considering defense)
    {
-      setHealth( getHealth() - damage );   
+      setHealth( getHealth() - dmg );   
    }
    
+   public void takeDamage(double dmg) // Monster Takes Damage (damage taken is equal to damage - defense)
+   {
+      if ( !( getDefense() > dmg ) )
+         setHealth( getHealth() + getDefense() - dmg);
+   }
+   
+   public String toString() // Prints stats of the monster
+   {
+      String toReturn = getName() + " has " + getHealth() + " health and " + getDefense() + " defense. ";
+      toReturn = toReturn + getName() + " is level " + getLevel() + " and has " + getExperience() + " experience and has " + getDeaths() + " deaths."; 
+      return toReturn;
+   }
 }
