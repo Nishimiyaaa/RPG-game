@@ -6,3 +6,7 @@ public class FunnyRPG {
 
    }
 }
+
+if (Defeated%2 == 0) {
+prints everything 
+}

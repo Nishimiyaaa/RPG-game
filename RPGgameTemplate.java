@@ -31,7 +31,7 @@ public class RPGgameTemplate {
         
         
         
-        
+
          {(Main Section)
          player attack 
          if (MHealth <= 0 || MHealth >= 1) 
