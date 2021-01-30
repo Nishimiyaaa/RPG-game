@@ -32,6 +32,7 @@ public class RPGgameTemplate {
         
         
         // Eddy Test
+        // Every 2 monsterDeaths, lvls++
          {(Main Section)
          player attack 
          if (MHealth <= 0 || MHealth >= 1) 
