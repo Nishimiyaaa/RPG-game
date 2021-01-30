@@ -1,18 +1,16 @@
 import java.util.Scanner;
 
 public class FunnyRPG {
-   public static void main(String []args) 
-   hello
+   public static void main(String []args) {
    
    
-
-   }
-}
-
+   
+   
+   
+   
       Scanner input = new Scanner(System.in); 
       Monster goblin = new Monster("Goblin");
-
-      
+      System.out.println(goblin.deaths);
       while (true) {
          System.out.print(goblin.getName() + " roars! ");
          System.out.println("Would you like to Attack? Yes or No?");
@@ -27,7 +25,22 @@ public class FunnyRPG {
       }
    }
 }
+// 
+// Scanner input = new Scanner(System.in);
+// String a = input.next();
+// int a = half(4);
+// a = 2;
 
+// 
+
+/*
+
+public double half(double num)
+{
+   return num/2.0;
+}
+
+*/
 //if (Defeated%2 == 0) {
 //prints everything 
 //}

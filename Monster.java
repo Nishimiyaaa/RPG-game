@@ -58,6 +58,7 @@ public class Monster {
    {
       return deaths;
    }
+
    
    public void setName(String n) // Set Name Of Monster
    {
@@ -68,7 +69,7 @@ public class Monster {
    {
       experience = e;
    }
-   
+
    public void setHealth(double h) // Set Health of Monster
    {
       health = h;
