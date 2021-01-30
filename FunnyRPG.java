@@ -3,7 +3,11 @@ import java.util.Scanner;
 public class FunnyRPG {
    public static void main(String []args) {  
    
+<<<<<<< Updated upstream
       Scanner input = new Scanner(System.in); 
+=======
+      Scanner input = new Scanner(System.in);  
+>>>>>>> Stashed changes
       
       while (true) {
          System.out.println("Would you like to Attack? Yes or No?");
