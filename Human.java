@@ -40,15 +40,27 @@ public class Human
       return experience;
    }
    
-   public void getStats() 
+   public String getStats() 
    {
       return stats;
    }
    
+   public void takeDamage(double dmg)
+   {
+      if ( !( getDefense() > dmg ) )
+         setHealth( getHealth() + getDefense() - dmg);
+   }
+   
+   public void takeRawDamage(double dmg) // Monster Takes Raw Damage (not considering defense)
+   {
+      setHealth( getHealth() - dmg );   
+   }
+   
+   /*
    public void getStats() {
       System.out.println(setName + " stats are: \n Level: " + setLevel + "\n Defense: " + setDefense + "\n Health: " + setHealth + "\n Experience: " + setExperience);
    }
-
+   */
   /*    int plevel = 1;
       int pAttack = 5, pDefense = 5;
       double pHealth = 100;

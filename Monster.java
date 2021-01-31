@@ -4,17 +4,19 @@ public class Monster {
    private double experience;
    private double health;
    private double defense;
+   private double attack;
    private int level;
    private int deaths;
    
-   // DEFAULTS: XP - 25, HP - 25, DF - 2, LVL - 1, DTH - 0 
+   // DEFAULTS: XP - 25, HP - 25, DF - 2, ATK - 3,LVL - 1, DTH - 0 
    
-   public Monster(String n, double xp, double hp, double df, int lvl, int death) // Monster Constructor, takes all private instance variables
+   public Monster(String n, double xp, double hp, double df, double atk, int lvl, int death) // Monster Constructor, takes all private instance variables
    {
       setName(n);
       setExperience(xp);
       setHealth(hp);
       setDefense(df);
+      setAttack(atk);
       setLevel(lvl);
       setDeaths(0);
    }
@@ -25,6 +27,7 @@ public class Monster {
       setExperience(25);
       setHealth(25);
       setDefense(2);
+      setAttack(3);
       setLevel(1);
       setDeaths(0);
    }
@@ -49,6 +52,11 @@ public class Monster {
       return defense;
    }
    
+   public double getAttack() // Get Monster Attack
+   {
+      return attack;
+   }
+   
    public int getLevel() // Get Monster Level
    {
       return level;
@@ -59,7 +67,6 @@ public class Monster {
       return deaths;
    }
 
-   
    public void setName(String n) // Set Name Of Monster
    {
       name = n;
@@ -78,6 +85,11 @@ public class Monster {
    public void setDefense(double d) // Set Defense of Monster
    {
       defense = d;
+   }
+   
+   public void setAttack(double a) // Set Attack of Monster
+   {
+      attack = a;
    }
    
    public void setLevel(int l) // Set Level of Monster
@@ -125,11 +137,16 @@ public class Monster {
       if ( !( getDefense() > dmg ) )
          setHealth( getHealth() + getDefense() - dmg);
    }
-   
-   public String toString() // Prints stats of the monster
+    
+   public String toString() // Prints stats of the monster, this is what is returned when the object is called without any method e.g print(goblin);
    {
       String toReturn = getName() + " has " + getHealth() + " health and " + getDefense() + " defense. ";
       toReturn = toReturn + getName() + " is level " + getLevel() + " and has " + getExperience() + " experience and has " + getDeaths() + " deaths."; 
       return toReturn;
+   } 
+   
+   public void attackHuman(Human human)
+   {
+      human.takeDamage(getAttack());
    }
 }
