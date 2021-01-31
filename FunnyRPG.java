@@ -11,6 +11,7 @@ public class FunnyRPG {
 
       Scanner input = new Scanner(System.in); 
       Monster goblin = new Monster("Goblin");
+      System.out.println("What is your character's name?");
 
       
       while (true) {

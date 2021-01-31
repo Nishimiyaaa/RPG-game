@@ -31,17 +31,11 @@ public class RPGgameTemplate {
         
         
         
-<<<<<<< HEAD
-        
-=======
-<<<<<<< HEAD
+
         // Eddy Test
         // Every 2 monsterDeaths, lvls++
         // GitRikt Test
-=======
 
->>>>>>> 40d9e367c01779c5c167446e8927d8fc7bcb0755
->>>>>>> a066e095a320d60c031df99d0a498614e69e8783
          {(Main Section)
          player attack 
          if (MHealth <= 0 || MHealth >= 1) 
