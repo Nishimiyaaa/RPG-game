@@ -45,3 +45,15 @@ public double half(double num)
 //prints everything 
 //}
 
+
+
+
+
+
+// Run(1,000,000,000)
+// Random Algorithm 1: RLUUDBU
+// Random Algorithm 2: LLULRDB
+// 3 bits to represent color, 6 bits to represent position, 4 bits to represent specific cube rotation -> 13 bits per cube position. 10~ cube rotations
+// per algorithm means 130 bits per algorithm.
+//
+
