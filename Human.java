@@ -61,7 +61,8 @@ public class Human
       System.out.println(setName + " stats are: \n Level: " + setLevel + "\n Defense: " + setDefense + "\n Health: " + setHealth + "\n Experience: " + setExperience);
    }
    */
-  /*    int plevel = 1;
+  /*  
+      int plevel = 1;
       int pAttack = 5, pDefense = 5;
       double pHealth = 100;
       double pExp = 0, rExp = 100;
