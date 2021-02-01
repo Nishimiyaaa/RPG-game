@@ -48,6 +48,7 @@ public class Human
       return stats;
    }
    
+<<<<<<< HEAD
    public void getName(String n) //This makes it so you get the name from  getName(n) in Monster and comes to this statement making n equal to name
    {
    name = n;
@@ -81,6 +82,26 @@ public class Human
    
 
   /*    int plevel = 1;
+=======
+   public void takeDamage(double dmg)
+   {
+      if ( !( getDefense() > dmg ) )
+         setHealth( getHealth() + getDefense() - dmg);
+   }
+   
+   public void takeRawDamage(double dmg) // Monster Takes Raw Damage (not considering defense)
+   {
+      setHealth( getHealth() - dmg );   
+   }
+   
+   /*
+   public void getStats() {
+      System.out.println(setName + " stats are: \n Level: " + setLevel + "\n Defense: " + setDefense + "\n Health: " + setHealth + "\n Experience: " + setExperience);
+   }
+   */
+  /*  
+      int plevel = 1;
+>>>>>>> cca726bd81e7023a98a693ae2b2e6904b1f071eb
       int pAttack = 5, pDefense = 5;
       double pHealth = 100;
       double pExp = 0, rExp = 100;

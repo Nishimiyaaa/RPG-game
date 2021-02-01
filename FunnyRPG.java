@@ -5,13 +5,16 @@ public class FunnyRPG {
       
       Scanner input = new Scanner(System.in); 
       Monster goblin = new Monster("Goblin");
-      Human userChar = new Human("character");
+      //Human userChar = new Human("character");
       
-      System.out.println("What is your character's name?"); 
-      String character = input.next();
-      //uman character = new Human
-      System.out.println(userChar.getName() + "'s your character's name.");
+      //System.out.println("What is your character's name?"); 
+      //tring character = input.next();
+      //System.out.println(userChar.getName() + "'s your character's name.");
       //System.out.println(goblin.deaths);
+
+      //System.out.println("What is your character's name?");
+
+
       while (true) {
          //System.out.println(printStats);
          System.out.print(goblin.getName() + " roars! ");
