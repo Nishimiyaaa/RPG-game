@@ -1,4 +1,4 @@
-public class Human 
+public class Human
 {
    private String name; 
    private String stats;
@@ -7,15 +7,17 @@ public class Human
    private double health;
    private double experience;    
    private double attack;
+   private double requiredXP;
    
-   public Human(String n, double e, double h, double d, int l, double a) //custom stats after default
+   
+   public Human(String n, double xp, double hp, double df, int lvl, double atk) //custom stats incase if wanted
    {
       setName(n);
-      setExperience(e);
-      setHealth(h);
-      setDefense(d);
-      setLevel(l);
-      setAttack(a);
+      setExperience(xp);
+      setHealth(hp);
+      setDefense(df);
+      setLevel(lvl);
+      setAttack(atk);
    }
    
    public Human(String n) //default stats
@@ -26,6 +28,7 @@ public class Human
       setHealth(100);
       setExperience(0);
       setAttack(5);
+      setRequiredXP(100);
    }
    
    public String getName() //For an example, Return is only used when someone gives you something and you need to give back 
@@ -35,7 +38,7 @@ public class Human
       return name;
    }
 
-   public int getLevel()
+   public int getLevel()         //gets the name
    {
       return level;
    }
@@ -59,17 +62,18 @@ public class Human
    {
       return attack;
    }
-  /* public String getStats() 
-   {
-      return stats;
-   } */
    
-   public void setName(String n) //This makes it so you get the name from  getName(n) in Monster and comes to this statement making n equal to name
+   public double getRequiredXP() 
+   {
+      return requiredXP;
+   } 
+   
+   public void setName(String n) //Sets the name
    {
       name = n;
    }
    
-   public void setLevel(int l) 
+   public void setLevel(int l)   
    {
       level = l;
    }
@@ -92,6 +96,26 @@ public class Human
    public void setAttack(double a)
    {
       attack = a;
+   }
+   
+   public void setRequiredXP(double re)
+   {
+      requiredXP = re;
+   }
+   
+   public void takeDamage(double a)
+   {
+      setHealth ( getHealth() + getDefense() - a);
+   }
+   
+   public void increaseExperience(double e) 
+   {
+      setExperience (getExperience() + e);
+   }
+   
+   public void increaseRequiredXP(double re)
+   {
+      setRequiredXP ( getRequiredXP() * re ); 
    }
    
    public String toReturn() //returning with no return statement makes it so it basically 

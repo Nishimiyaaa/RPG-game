@@ -12,35 +12,58 @@ public class FunnyRPG {
       Human userChar = new Human(character);
    
       System.out.println(userChar.getName() + "'s your character's name.");
-      
    
    
       while (true) {
-      
+         //asks if user would like to attack
          System.out.print(goblin.getName() + " roars! ");
          System.out.println("Would you like to Attack? Yes or No?");
          String user = input.next();
          
-         if (user.toLowerCase().equals("yes")) { //checks for the user's input, changes all the letters to lower case, then finds if the statement user put in is equal to (" ")
-            System.out.println("You did: " + userChar.getAttack() + " damage to the Monster! \nThe Monster has " + goblin.takeDamage(userChar.getAttack()) + " HP left!");
-            //attack statements go under
-            if (goblin.getHealth() <= 0) {   //Finds if the monster is dead or not
-               goblin.increaseDeaths(goblin.getDeaths());
+         //If user says yes, the user attacks monster
+         if (user.toLowerCase().equals("yes")) { 
+            goblin.takeDamage(userChar.getAttack());  
+            System.out.println("You did: " + userChar.getAttack() + " damage to the Monster! \nThe Monster has " + goblin.getHealth() + " HP left!");
+            
+            //Finds if the monster is dead
+            if (goblin.getHealth() <= 0) {   
                System.out.println("The Monster's Defeated!");
-               break;
+               //increases Monster's Stats
+               //put monster stat increase in MonsterClass the next time when you get on
+               userChar.increaseExperience(goblin.getExperience());
+               goblin.increaseDeaths(1);
+               goblin.setHealth(25);
+               goblin.increaseHealth(10);
+               //Add max hp   
+               goblin.increaseAttack(2);
+               goblin.increaseDefense(1);
+               goblin.increaseExperience(25);
+               goblin.increaseLevel(1);
             }
+            //Player Levels UP
+            else if (userChar.getExperience() >= userChar.getRequiredXP()) {
+              //Next time when getting on program, create couple classes for stat increase and put it in here
+            }
+            
+            //Monster attacks user
+            
+           // else if 
+             //  userChar.takeDamage(goblin.getAttack());
+               
+         
          }
          else if (user.toLowerCase().equals("no")) {  
             System.out.println("NEXT PART COMING OUT SOON!");     
          }    
       }
-      int mHp = 25, x = 2;
+      /*int mHp = 25, x = 2;
       goblin.setHealth(mHp);
-      System.out.println(goblin.getHealth());
-      System.out.println(goblin.increaseHealth(1));
+      goblin.getHealth();
+      goblin.increaseHealth(1);
       goblin.setHealth(mHp);
       System.out.println(goblin.getHealth());
       //System.out.println(goblin.increaseHealth(goblin.getHealth()));
+      */
    }
 }
 //  if (input.next().toLowerCase().equals("yes"))
