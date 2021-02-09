@@ -10,7 +10,7 @@ public class Monster {
    
    // DEFAULTS: XP - 25, HP - 25, DF - 2, ATK - 3,LVL - 1, DTH - 0 
    
-   public Monster(String n, double xp, double hp, double df, double atk, int lvl, int death) // Monster Constructor, takes all private instance variables
+   public Monster(String n, double xp, double hp, double df, double atk, int lvl, int deaths) // Monster Constructor, takes all private instance variables
    {
       setName(n);
       setExperience(xp);
@@ -18,7 +18,7 @@ public class Monster {
       setDefense(df);
       setAttack(atk);
       setLevel(lvl);
-      setDeaths(0);
+      setDeaths(deaths);
    }
    
    public Monster(String n) // Monster Constructor, sets name, assigns default values to XP, HP, DF, LVL and DTHs (25,25,2,1,0) respectively
@@ -32,7 +32,7 @@ public class Monster {
       setDeaths(0);
    }
    
-   public String getName() // Get Monster Name
+   public String getName() // Get Monster Name 
    {
       return name;
    }
@@ -64,12 +64,12 @@ public class Monster {
    
    public int getDeaths() // Get Monster Deaths
    {
-      return deaths;
+      return deaths;       //this is where you get death because you return it to the original value
    }
 
    public void setName(String n) // Set Name Of Monster
    {
-      name = n;
+      name = n;            //this is where you set the name because name = n
    }
    
    public void setExperience(double e) // Set Experience Of Monster
@@ -107,9 +107,10 @@ public class Monster {
       setExperience( getExperience() + a );
    }
    
-   public void increaseHealth(double h) // Increase Monster's Health By h Amount
+   public double increaseHealth(double h) // Increase Monster's Health By h Amount
    {
       setHealth( getHealth() + h);
+      return health;
    }
    
    public void increaseDefense(double d) // Increase Monster's Defense By d Amount
@@ -132,10 +133,11 @@ public class Monster {
       setHealth( getHealth() - dmg );   
    }
    
-   public void takeDamage(double dmg) // Monster Takes Damage (damage taken is equal to damage - defense)
+   public double takeDamage(double dmg) // Monster Takes Damage (damage taken is equal to damage - defense)
    {
       if ( !( getDefense() > dmg ) )
          setHealth( getHealth() + getDefense() - dmg);
+      return health;
    }
     
    public String toString() // Prints stats of the monster, this is what is returned when the object is called without any method e.g print(goblin);
@@ -145,8 +147,8 @@ public class Monster {
       return toReturn;
    } 
    
-   public void attackHuman(Human human)
+   /*public void attackHuman(Human human)
    {
       human.takeDamage(getAttack());
-   }
+   }*/
 }

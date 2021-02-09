@@ -5,32 +5,48 @@ public class FunnyRPG {
       
       Scanner input = new Scanner(System.in); 
       Monster goblin = new Monster("Goblin");
-      //Human userChar = new Human("character");
       
-      //System.out.println("What is your character's name?"); 
-      //tring character = input.next();
-      //System.out.println(userChar.getName() + "'s your character's name.");
-      //System.out.println(goblin.deaths);
-
-      //System.out.println("What is your character's name?");
-
-
+      System.out.println("What is your character's name?"); 
+      String character = input.next();
+      
+      Human userChar = new Human(character);
+   
+      System.out.println(userChar.getName() + "'s your character's name.");
+      
+   
+   
       while (true) {
-         //System.out.println(printStats);
+      
          System.out.print(goblin.getName() + " roars! ");
          System.out.println("Would you like to Attack? Yes or No?");
          String user = input.next();
          
-         if (input.next().toLowerCase().equals("yes")) { //checks for the user's input, changes all the letters to lower case, then finds if the statement user put in is equal to (" ")
+         if (user.toLowerCase().equals("yes")) { //checks for the user's input, changes all the letters to lower case, then finds if the statement user put in is equal to (" ")
+            System.out.println("You did: " + userChar.getAttack() + " damage to the Monster! \nThe Monster has " + goblin.takeDamage(userChar.getAttack()) + " HP left!");
             //attack statements go under
+            if (goblin.getHealth() <= 0) {   //Finds if the monster is dead or not
+               goblin.increaseDeaths(goblin.getDeaths());
+               System.out.println("The Monster's Defeated!");
+               break;
+            }
          }
-         else if (input.next().toLowerCase().equals("no")) {  
-            System.out.println("COMING OUT!");     
+         else if (user.toLowerCase().equals("no")) {  
+            System.out.println("NEXT PART COMING OUT SOON!");     
          }    
       }
+      int mHp = 25, x = 2;
+      goblin.setHealth(mHp);
+      System.out.println(goblin.getHealth());
+      System.out.println(goblin.increaseHealth(1));
+      goblin.setHealth(mHp);
+      System.out.println(goblin.getHealth());
+      //System.out.println(goblin.increaseHealth(goblin.getHealth()));
    }
 }
-// 
+//  if (input.next().toLowerCase().equals("yes"))
+
+
+
 // Scanner input = new Scanner(System.in);
 // String a = input.next();
 // int a = half(4);

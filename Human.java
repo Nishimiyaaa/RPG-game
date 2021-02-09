@@ -5,100 +5,103 @@ public class Human
    private int level;
    private double defense;
    private double health;
-   private double experience; 
-
-   public Human(String n, int l, double d, double h, double e) 
+   private double experience;    
+   private double attack;
+   
+   public Human(String n, double e, double h, double d, int l, double a) //custom stats after default
    {
-      getName(n);
-      getLevel(1);
-      getDefense(2);
-      getHealth(100);
-      getExperience(0);
+      setName(n);
+      setExperience(e);
+      setHealth(h);
+      setDefense(d);
+      setLevel(l);
+      setAttack(a);
    }
    
-   public String setName() //For an example, Return is only used when someone gives you something and you need to give back 
-   //(Ex. Someone gave me a hp they want so I returned the amount of hp they wanted) 
+   public Human(String n) //default stats
+   {
+      setName(n);
+      setLevel(1);
+      setDefense(2);
+      setHealth(100);
+      setExperience(0);
+      setAttack(5);
+   }
+   
+   public String getName() //For an example, Return is only used when someone gives you something and you need to give back 
+   //(Ex. Someone gave me a hp they wanted so I returned the amount of hp they wanted) 
    //You don't use return when you're just giving something out (Ex. I dealt 5 damage, there is no point to return the 5 damage that you dealt because it stays the same in a way or like name)
    {  
       return name;
    }
 
-   public int setLevel()
+   public int getLevel()
    {
       return level;
    }
    
-   public double setDefense() 
+   public double getDefense() 
    {
       return defense;
    } 
    
-   public double setHealth() 
+   public double getHealth() 
    {
       return health;
    }
    
-   public double setExperience() 
+   public double getExperience() 
    {
       return experience;
    }
    
-   public String getStats() 
+   public double getAttack()
+   {
+      return attack;
+   }
+  /* public String getStats() 
    {
       return stats;
+   } */
+   
+   public void setName(String n) //This makes it so you get the name from  getName(n) in Monster and comes to this statement making n equal to name
+   {
+      name = n;
    }
    
-<<<<<<< HEAD
-   public void getName(String n) //This makes it so you get the name from  getName(n) in Monster and comes to this statement making n equal to name
+   public void setLevel(int l) 
    {
-   name = n;
+      level = l;
    }
    
-   public void getLevel(int l) 
+   public void setDefense(double d) 
    {
-   level = l;
+      defense = d;
    }
    
-   public void getDefense(double d) 
+   public void setHealth(double h)
    {
-   defense = d;
+      health = h;
    }
    
-   public void getHealth(double h)
+   public void setExperience(double e) 
    {
-   health = h;
+      experience = e;
    }
    
-   public void getExperience(double e) 
+   public void setAttack(double a)
    {
-   experience = e;
+      attack = a;
    }
    
-   public String printStats()
+   public String toReturn() //returning with no return statement makes it so it basically 
    {
-      System.out.println(name + " stats are: \n Level: " + level + "\n Defense: " + defense + "\n Health: " + health + "\n Experience: " + experience);
-      return stats;
+      String toReturn = name + " has " + health + ", " + defense + ", and " + experience + getName() + getAttack();;
+      toReturn = toReturn + name + " stats are: \n Level: " + level + "\n Defense: " + defense + "\n Health: " + health + "\n Experience: " + experience;
+      return toReturn;
    }
    
 
-  /*    int plevel = 1;
-=======
-   public void takeDamage(double dmg)
-   {
-      if ( !( getDefense() > dmg ) )
-         setHealth( getHealth() + getDefense() - dmg);
-   }
-   
-   public void takeRawDamage(double dmg) // Monster Takes Raw Damage (not considering defense)
-   {
-      setHealth( getHealth() - dmg );   
-   }
-   
-   /*
-   public void getStats() {
-      System.out.println(setName + " stats are: \n Level: " + setLevel + "\n Defense: " + setDefense + "\n Health: " + setHealth + "\n Experience: " + setExperience);
-   }
-   */
   /*  
       int plevel = 1;
 >>>>>>> cca726bd81e7023a98a693ae2b2e6904b1f071eb
