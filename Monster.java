@@ -8,7 +8,7 @@ public class Monster {
    private double attack;
    private int level;
    private int deaths;
-
+   
    // DEFAULTS: XP - 25, HP - 25, DF - 2, ATK - 3,LVL - 1, DTH - 0 
    
    public Monster(String n, double xp, double hp, double df, double atk, int lvl, int deaths) // Monster Constructor, takes all private instance variables
@@ -31,6 +31,7 @@ public class Monster {
       setAttack(3);
       setLevel(1);
       setDeaths(0);
+      setMaxHealth(25);
    }
    
    public String getName() // Get Monster Name 
@@ -158,7 +159,25 @@ public class Monster {
       if ( !( getDefense() > dmg ) )
          setHealth( getHealth() + getDefense() - dmg);
    }
+   
+   public void updateIfMonsterDead(double a, double mH, double atk, double d) // Checks if monster is dead
+   {
+      if ( getMaxHealth() <= 0) 
+      {
+         increaseStats(a, mH, atk, d);
+      }
+   }
     
+   public void increaseStats(double a, double mH, double atk, double d) // Increases stats for the monster when it dies 
+   {
+      increaseExperience(a);
+      increaseMaxHealth(mH);
+      increaseAttack(atk);
+      increaseDefense(d);
+      increaseLevel(1);
+      increaseDeaths(1);
+   }
+   
    public String toString() // Prints stats of the monster, this is what is returned when the object is called without any method e.g print(goblin);
    {
       String toReturn = getName() + " has " + getHealth() + " health and " + getDefense() + " defense. ";

@@ -29,21 +29,12 @@ public class FunnyRPG {
             if (goblin.getHealth() <= 0) {   
                System.out.println("The Monster's Defeated!");
                //increases Monster's Stats
-               //put monster stat increase in MonsterClass the next time when you get on
-               userChar.increaseExperience(goblin.getExperience());
-               goblin.increaseDeaths(1);
-               goblin.setHealth(25);
-               goblin.increaseHealth(10);
-               //Add max hp   
-               goblin.increaseAttack(2);
-               goblin.increaseDefense(1);
-               goblin.increaseExperience(25);
-               goblin.increaseLevel(1);
+               //goblin.updateIfMonsterDeath(25, 10, 2, 1);
             }
             //Player Levels UP
-            else if (userChar.getExperience() >= userChar.getRequiredXP()) {
+            //else if (userChar.getExperience() >= userChar.getRequiredXP()) {
               //Next time when getting on program, create couple classes for stat increase and put it in here
-            }
+           // }
             
             //Monster attacks user
             
@@ -56,14 +47,15 @@ public class FunnyRPG {
             System.out.println("NEXT PART COMING OUT SOON!");     
          }    
       }
-      /*int mHp = 25, x = 2;
-      goblin.setHealth(mHp);
+      /*int x = 25, y = 1;
+      goblin.setHealth(x);
       goblin.getHealth();
       goblin.increaseHealth(1);
-      goblin.setHealth(mHp);
+      goblin.setHealth(x);
       System.out.println(goblin.getHealth());
-      //System.out.println(goblin.increaseHealth(goblin.getHealth()));
       */
+      //System.out.println(goblin.increaseHealth(goblin.getHealth()));
+      
    }
 }
 //  if (input.next().toLowerCase().equals("yes"))
