@@ -192,8 +192,4 @@ public class Monster {
       return toReturn;
    } 
    
-   /*public void attackHuman(Human human)
-   {
-      human.takeDamage(getAttack());
-   }*/
 }
