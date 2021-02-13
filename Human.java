@@ -43,27 +43,27 @@ public class Human
       return level;
    }
    
-   public double getDefense() 
+   public double getDefense() // gets the defense
    {
       return defense;
    } 
    
-   public double getHealth() 
+   public double getHealth() // gets the health
    {
       return health;
    }
    
-   public double getExperience() 
+   public double getExperience() // gets the experience
    {
       return experience;
    }
    
-   public double getAttack()
+   public double getAttack() // gets the attack
    {
       return attack;
    }
    
-   public double getRequiredXP() 
+   public double getRequiredXP() // gets required xp
    {
       return requiredXP;
    } 
@@ -73,77 +73,49 @@ public class Human
       name = n;
    }
    
-   public void setLevel(int l)   
+   public void setLevel(int l) // sets the level
    {
       level = l;
    }
    
-   public void setDefense(double d) 
+   public void setDefense(double d) // sets defense
    {
       defense = d;
    }
    
-   public void setHealth(double h)
+   public void setHealth(double h) // set health
    {
       health = h;
    }
    
-   public void setExperience(double e) 
+   public void setExperience(double e) // set experience
    {
       experience = e;
    }
    
-   public void setAttack(double a)
+   public void setAttack(double a) // set attack
    {
       attack = a;
    }
    
-   public void setRequiredXP(double re)
+   public void setRequiredXP(double re) // sets the required xp
    {
       requiredXP = re;
    }
    
-   public void takeDamage(double a)
+   public void takeDamage(double a) // takes a amount of damage
    {
       setHealth ( getHealth() + getDefense() - a);
    }
    
-   public void increaseAttack(double a) 
-   {
-      setAttack ( getAttack() + a );
-   }
-   
-   public void increaseDefense(double d)
-   {
-      setDefense ( getDefense() + d );
-   }
-   
-   public void increaseHealth(double h)
-   {
-      setHealth ( getHealth() + h );
-   }
-   
-   public void increaseExperience(double e) 
+   public void increaseExperience(double e) // increases experience by e amount
    {
       setExperience (getExperience() + e);
    }
    
-   public void increaseRequiredXP(double re)
+   public void increaseRequiredXP(double re) // increases required xp by re amount
    {
       setRequiredXP ( getRequiredXP() * re ); 
-   }
-   
-   public void increasePlayerLevel(int pl)
-   {
-      setLevel ( getLevel() + pl);
-   }
-   
-   public void findIfPlayerLevelsUP(double fPLvlUP)
-   {
-      if (getExperience() >= getRequiredXP())
-         increasePlayerLevel(1);
-         increaseRequiredXP(1.5);
-         
    }
    
    public String toReturn() //returning with no return statement makes it so it basically 
@@ -153,23 +125,11 @@ public class Human
       return toReturn;
    }
    
-
-  /*  
-      int plevel = 1;
->>>>>>> cca726bd81e7023a98a693ae2b2e6904b1f071eb
-      int pAttack = 5, pDefense = 5;
-      double pHealth = 100;
-      double pExp = 0, rExp = 100;
-   
-      if (pExp >= 100)
-      {
-      plevel++;
-      pExp = pExp * 1.25;
-      pAttack = pAttack + 2;
-      pDefense = pDefense +2;
-      pHealth = pHealth * 1.5;
+   /*
+   public void takeMonsterXP(Monster monster, double percentageToTake) // takes a percentage of a monsters hp
+   {
+      increaseExperience(monster.getExperience());
    }
    */
-
-
+   
 }
