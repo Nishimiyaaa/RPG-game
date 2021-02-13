@@ -108,6 +108,21 @@ public class Human
       setHealth ( getHealth() + getDefense() - a);
    }
    
+   public void increaseAttack(double a) 
+   {
+      setAttack ( getAttack() + a );
+   }
+   
+   public void increaseDefense(double d)
+   {
+      setDefense ( getDefense() + d );
+   }
+   
+   public void increaseHealth(double h)
+   {
+      setHealth ( getHealth() + h );
+   }
+   
    public void increaseExperience(double e) 
    {
       setExperience (getExperience() + e);
@@ -116,6 +131,19 @@ public class Human
    public void increaseRequiredXP(double re)
    {
       setRequiredXP ( getRequiredXP() * re ); 
+   }
+   
+   public void increasePlayerLevel(int pl)
+   {
+      setLevel ( getLevel() + pl);
+   }
+   
+   public void findIfPlayerLevelsUP(double fPLvlUP)
+   {
+      if (getExperience() >= getRequiredXP())
+         increasePlayerLevel(1);
+         increaseRequiredXP(1.5);
+         
    }
    
    public String toReturn() //returning with no return statement makes it so it basically 

@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class FunnyRPG {
+   
    public static void main(String []args) {
       
       Scanner input = new Scanner(System.in); 
@@ -24,29 +25,31 @@ public class FunnyRPG {
          if (user.toLowerCase().equals("yes")) { 
             goblin.takeDamage(userChar.getAttack());  
             System.out.println("You did: " + userChar.getAttack() + " damage to the Monster! \nThe Monster has " + goblin.getHealth() + " HP left!");
-            
+         
             //Finds if the monster is dead
             if (goblin.getHealth() <= 0) {   
                System.out.println("The Monster's Defeated!");
-               //increases Monster's Stats
-               //goblin.updateIfMonsterDeath(25, 10, 2, 1);
+               userChar.increaseExperience(goblin.getExperience());
+               goblin.updateIfMonsterDead(25, 10, 2, 1);
+               
+               System.out.println("The Goblin now has: \n Health: " + goblin.getHealth() + "\n Attack:  " + goblin.getAttack() + "\n Defense: " + goblin.getDefense() + "\n Level:   " + goblin.getLevel());
             }
             //Player Levels UP
-            //else if (userChar.getExperience() >= userChar.getRequiredXP()) {
-              //Next time when getting on program, create couple classes for stat increase and put it in here
-           // }
+            //else if (goblin.updateIfMonsterDead()) {
+            //Next time when getting on program, create couple classes for stat increase and put it in here
+         }
+         
             
             //Monster attacks user
             
            // else if 
              //  userChar.takeDamage(goblin.getAttack());
                
-         
-         }
          else if (user.toLowerCase().equals("no")) {  
-            System.out.println("NEXT PART COMING OUT SOON!");     
-         }    
-      }
+            System.out.println("NEXT PART COMING OUT SOON!");  
+         }
+      }    
+   }
       /*int x = 25, y = 1;
       goblin.setHealth(x);
       goblin.getHealth();
@@ -56,8 +59,8 @@ public class FunnyRPG {
       */
       //System.out.println(goblin.increaseHealth(goblin.getHealth()));
       
-   }
 }
+
 //  if (input.next().toLowerCase().equals("yes"))
 
 

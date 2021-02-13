@@ -1,5 +1,5 @@
 public class Monster {
-
+   
    private String name;
    private double experience;
    private double health;
@@ -31,7 +31,7 @@ public class Monster {
       setAttack(3);
       setLevel(1);
       setDeaths(0);
-      setMaxHealth(25);
+      setMaxHealth(10);
    }
    
    public String getName() // Get Monster Name 
@@ -68,7 +68,7 @@ public class Monster {
    {
       return level;
    }
-   
+      
    public int getDeaths() // Get Monster Deaths
    {
       return deaths;       //this is where you get death because you return it to the original value
@@ -121,7 +121,7 @@ public class Monster {
    
    public void increaseHealth(double h) // Increase Monster's Health By h Amount
    {
-      setHealth( getHealth() + h );
+      setHealth( getHealth() + h + getMaxHealth());
    }
    
    public void increaseMaxHealth(double mH) // increase monster's max health by mH amount
@@ -129,7 +129,7 @@ public class Monster {
       setMaxHealth( getMaxHealth() + mH );
    }
    
-   public void increaseAttack(double a)   // Increase Monsetr's Attack By a Amount
+   public void increaseAttack(double a)   // Increase Monster's Attack By a Amount
    {
       setAttack ( getAttack() + a );
    }
@@ -162,18 +162,25 @@ public class Monster {
    
    public void updateIfMonsterDead(double a, double mH, double atk, double d) // Checks if monster is dead
    {
-      if ( getMaxHealth() <= 0) 
+      if ( getHealth() <= 0) 
       {
+         health = 0;
          increaseStats(a, mH, atk, d);
       }
    }
     
-   public void increaseStats(double a, double mH, double atk, double d) // Increases stats for the monster when it dies 
+  /* public void reviveMonster()
    {
+      setHealth ( (getHealth() == 0) + 25);
+   }
+  */ 
+   public void increaseStats(double a, double mH, double atk, double d) // Increases stats for the monster when it dies 
+   {  
+      increaseHealth(25);
       increaseExperience(a);
       increaseMaxHealth(mH);
       increaseAttack(atk);
-      increaseDefense(d);
+      increaseDefense(d);;
       increaseLevel(1);
       increaseDeaths(1);
    }
